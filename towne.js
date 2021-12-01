@@ -24,8 +24,23 @@ msg.forEach(getItem => {
         } else {
             console.log(amount);
             console.log(item);
-        }                  
+        }   
+        
+        function groupBy(category, item) {
+            return category.reduce(function (acc, obj) {
+              let key = obj[item]
+              if (!acc[key]) {
+                acc[key] = []
+              }
+              acc[key].push(obj)
+              return acc 
+            }, {}) 
+          }
+        let groupitem = groupBy(category)
+        console.log(groupitem);
 });
+
+
 
 //#2 extract quantity
 // do something
